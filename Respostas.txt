@@ -1,0 +1,62 @@
+Modelagem de Dados
+Tipo de Banco:
+NoSQL — modelo de documentos.
+
+Por que escolhi esse modelo:
+O sistema de entregas precisa guardar informações como:
+
+Origem e destino
+
+Status
+
+Datas e horários
+
+Esse modelo é flexível. Se no futuro for preciso adicionar campos como “avaliação do cliente” ou “tempo estimado de entrega”, não será necessário mudar toda a estrutura.
+
+Escalabilidade
+Como vai escalar:
+De forma horizontal — mais barata e eficiente para grandes volumes.
+
+Estratégia de Sharding escolhida é: 
+
+    Por hash:
+
+        Distribui os dados de forma equilibrada entre os servidores.
+
+        Evita que um servidor fique sobrecarregado.
+
+Como otimizar as consultas
+Índices compostos:
+
+Usar índices que combinam dois ou mais campos para deixar as buscas mais rápidas.
+
+Projeção de campos:
+
+Retornar só o que for necessário.
+
+Exemplo: se só preciso do “destino” e da “data de entrega”, não trago o resto, economizando tempo e recursos.
+
+Explain():
+
+Verifica se a consulta está usando o índice.
+
+Mostra quantos documentos foram lidos, ajudando a encontrar problemas.
+
+Monitoramento
+O que vamos acompanhar:
+
+Taxa de operações: quantas leituras e escritas são feitas.
+
+Uso de memória e CPU por shard: para ver se algum servidor está sobrecarregado.
+
+Latência das consultas: garantir que as respostas sejam rápidas.
+
+Rebalanceamento
+Quando um shard tiver muitos dados, será feito o rebalanceamento, principalmente quando novos servidores forem adicionados. Isso evita sobrecarga e mantém o sistema eficiente.
+
+Resumo
+Escolhi MongoDB pelo modelo flexível de documentos.
+A coleção é eficiente e fácil de adaptar.
+A escalabilidade será horizontal, com sharding por hash.
+As consultas serão otimizadas com índices e projeção.
+Vamos monitorar com métricas importantes e fazer rebalanceamento sempre que necessário.

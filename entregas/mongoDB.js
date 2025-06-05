@@ -1,0 +1,1 @@
+sh.moveChunk('entregas', {cliente_id: '123456'}, 'shar02')

@@ -1,0 +1,17 @@
+{
+  "_id": "ObjectId",             
+  "cliente_id": "123456",       
+  "origem": {
+    "endereco": "Rua São carlos, 08",
+    "cidade": "Campo limpo",
+    "estado": "SP"
+  },
+  "destino": {
+    "endereco": "Rua São joão, 456",
+    "cidade": "Bragança Paulista",
+    "estado": "SP"
+  },
+  "status": "em_transito",       
+  "data_coleta": "2025-06-04T08:00:00Z",
+  "data_entrega": "2025-06-05T12:00:00Z"
+}
